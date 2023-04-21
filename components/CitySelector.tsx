@@ -4,7 +4,7 @@ import { Country, City } from "country-state-city";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Select from "react-select";
-import { GlobeIcon } from "@heroicons/react/solid";
+import { GlobeIcon, OfficeBuildingIcon } from "@heroicons/react/solid";
 
 type ICountry = {
     value: {
@@ -65,9 +65,9 @@ function CitySelector() {
             ></Select>
         
             {selectedCountry && (
-                <div className="space-y-2">
+                <div className="pt-3 space-y-2">
                     <div className="flex items-center space-x-2 text-white">
-                        <GlobeIcon className="h-5 w-5 text-white"></GlobeIcon>
+                        <OfficeBuildingIcon className="h-5 w-5 text-white"></OfficeBuildingIcon>
                         <label htmlFor="city">City</label>
                     </div>
                     <Select
