@@ -40,14 +40,22 @@ function CitySelector() {
   const [selectedCity, setSelectedCity] = useState<ICity>(null);
   const router = useRouter();
 
+  const checkCityPresence = (country: ICountry) => {
+    const res = City.getCitiesOfCountry(country?.value.isoCode!)?.length == 0 ? false : true;
+    
+    return res
+  }
+
   const handleSelectedCountry = (country: ICountry) => {
     setSelectedCountry(country);
     setSelectedCity(null);
+
+    if(!checkCityPresence(country)) router.push(`/location/${country?.label}/${country?.value.latitude}/${country?.value.longitude}`);
   }
 
   const handleSelectedCity = (city: ICity) => {
     setSelectedCity(city);
-    router.push(`/location/${city?.label}/${city?.value.latitude}/${city?.value.longitude}`);
+    // router.push(`/location/${city?.label}/${city?.value.latitude}/${city?.value.longitude}`);
   }
     
   return (

@@ -11,7 +11,7 @@ import getBasePath from '@/lib/getBasePath'
 import cleanData from '@/lib/cleanData'
 import WindGustsChart from '@/components/WindGustsChart'
 
-export const revalidate = 60;
+export const revalidate = 300;
 
 type props = {
     params: {
