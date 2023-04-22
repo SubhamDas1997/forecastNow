@@ -16,13 +16,13 @@ A full stack weather app summarising a weather report of any city of the world:
 
 # Modules
 1. Homepage
-  - City Picker Select
+    - City Picker Select
 <br><br>
 1. Weather Report
-  - Information Panel
-  - Callout Cards
-  - Stat Cards
-  - Charts
+    - Information Panel
+    - Callout Cards
+    - Stat Cards
+    - Charts
 <br><br>
 1. Loading
 
