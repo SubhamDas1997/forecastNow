@@ -13,7 +13,7 @@ type props = {
 
 function InfoPanel({ city, lat, long, response }: props) {
   return (
-    <div className='p-10 bg-gradient-to-br from-[#2EB62C] to-[#B3D475] text-white'>
+    <div className='p-10 bg-gradient-to-br from-[#2EB62C] to-[#B3D475] text-white lg:w-1/4'>
         <div className='pb-5'>
             <h1 className='text-4xl md:text-6xl font-bold pb-4 text-center lg:text-left lg:max-w-lg'>{decodeURI(city)}</h1>
             <p className='text-lg text-white text-center lg:text-left'>Lattitude: {lat}</p>

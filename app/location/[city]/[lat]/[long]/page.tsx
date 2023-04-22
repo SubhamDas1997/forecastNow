@@ -99,7 +99,7 @@ async function weatherReport({ params: {city, lat, long }}: props) {
             </div>
           </div>
 
-          <div className='mx-2'>
+          <div className='mx-2 mb-2'>
             {Number(response.daily.uv_index_max[0].toFixed(1)) >= 8 && (
                 <CalloutCard
                   header='High UV Index'
@@ -110,7 +110,7 @@ async function weatherReport({ params: {city, lat, long }}: props) {
           </div>
         </div>
         
-        <hr className='mb-5' />
+        <hr className='mb-8' />
 
         <div className='space-y-3'>
           <TempChart response={response} />
