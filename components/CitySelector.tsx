@@ -55,7 +55,7 @@ function CitySelector() {
 
   const handleSelectedCity = (city: ICity) => {
     setSelectedCity(city);
-    // router.push(`/location/${city?.label}/${city?.value.latitude}/${city?.value.longitude}`);
+    router.push(`/location/${city?.label}/${city?.value.latitude}/${city?.value.longitude}`);
   }
     
   return (

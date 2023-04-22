@@ -87,13 +87,13 @@ async function weatherReport({ params: {city, lat, long }}: props) {
             <div className='flex space-x-5'>
               <StatCard 
                 title='Wind Speed'
-                metric={response.current_weather.windspeed.toFixed(1)}
+                metric={`${response.current_weather.windspeed.toFixed(1)} km/h`}
                 color='pink'
               />
 
               <StatCard 
                 title='Wind Direction'
-                metric={response.current_weather.winddirection.toFixed(1)}
+                metric={`${response.current_weather.winddirection.toFixed(1)}°`}
                 color='blue'
               />
             </div>
