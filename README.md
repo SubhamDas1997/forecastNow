@@ -37,7 +37,7 @@ Stat cards are used to show rest of the weather details.<br>
 Hourly changing data such as temperature, uv index, rain probalility, humidity and wind gusts are repesented using reusable chart component.
 
 ### Loading
-A intermediate page shown during the fetch time of the data from teh API and AI.
+An intermediate page shown until a successful response is received from the weather API and AI.
 
 # Tech
 
