@@ -7,6 +7,11 @@ import InfoPanel from '@/components/InfoPanel'
 import TempChart from '@/components/TempChart'
 import RainChart from '@/components/RainChart'
 import HumidityChart from '@/components/HumidityChart'
+import getBasePath from '@/lib/getBasePath'
+import cleanData from '@/lib/cleanData'
+import WindGustsChart from '@/components/WindGustsChart'
+
+export const revalidate = 60;
 
 type props = {
     params: {
@@ -25,15 +30,26 @@ async function weatherReport({ params: {city, lat, long }}: props) {
       current_weather: "true",
       latitude: lat,
       longitude: long,
-      timezone: "GMT"
+      timezone: "auto"
     }
   });
 
   const response: Root = data.myQuery;
-  console.log(response);
+  const dataToGPT = cleanData(response, city);
+
+  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+    method: 'POST',
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({weatherData: dataToGPT})
+  })
+
+  const GPTData = await res.json();
+  const { content } = GPTData;
 
   return (
-    <div className='flex flex-col min-h-screen md:flex-row'>
+    <div className='flex flex-col min-h-screen lg:flex-row'>
       <InfoPanel city={city} lat={lat} long={long} response={response}/>
 
       <div className='flex-1 p-5 lg:p-10'>
@@ -47,12 +63,10 @@ async function weatherReport({ params: {city, lat, long }}: props) {
           </div>
         
           <div className='m-2 mb-10'>
-            <CalloutCard 
-              message='This where GPT 4 message will go'
-            />
+            <CalloutCard header='Weather Report' message={content} />
           </div>
 
-          <div className='grid grid-cols-1 xl:grid-cols-2 gap-5 m-2'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 gap-5 m-2 text'>
             <StatCard 
               title='Maximum temperature' 
               metric={`${response.daily.temperature_2m_max[0].toFixed(1)}°`} 
@@ -62,22 +76,13 @@ async function weatherReport({ params: {city, lat, long }}: props) {
             <StatCard 
               title='Mimimum temperature' 
               metric={`${response.daily.temperature_2m_min[0].toFixed(1)}°`} 
-              color='teal' 
+              color='teal'
             />
 
-            <div>
-              <StatCard 
-                title='UV Index' 
-                metric={response.daily.uv_index_max[0].toFixed(1)} color='violet' 
-              />
-
-              {Number(response.daily.uv_index_max[0].toFixed(1)) >= 5 && (
-                <CalloutCard 
-                  message='Be sure to protect yourself from the high UV today!' 
-                  warning 
-                />
-              )}
-            </div>
+            <StatCard 
+              title='UV Index' 
+              metric={response.daily.uv_index_max[0].toFixed(1)} color='violet' 
+            />
 
             <div className='flex space-x-5'>
               <StatCard 
@@ -93,6 +98,16 @@ async function weatherReport({ params: {city, lat, long }}: props) {
               />
             </div>
           </div>
+
+          <div className='mx-2'>
+            {Number(response.daily.uv_index_max[0].toFixed(1)) >= 8 && (
+                <CalloutCard
+                  header='High UV Index'
+                  message='Be sure to protect yourself from the high UV today!' 
+                  warning 
+                />
+            )}
+          </div>
         </div>
         
         <hr className='mb-5' />
@@ -101,6 +116,7 @@ async function weatherReport({ params: {city, lat, long }}: props) {
           <TempChart response={response} />
           <RainChart response={response} />
           <HumidityChart response={response} />
+          <WindGustsChart response={response} />
         </div>
       </div>
     </div>
