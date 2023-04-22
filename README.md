@@ -1,2 +1,11 @@
-# forecastNow
-A fronend application forecasting the weather conditions of any selected city in a detailed weather report with the help of graphs and AI.
+<h1 align="center">ForecastNow 🔆</h1>
+
+### 🌐 [Site](https://forecast-now-silk.vercel.app)
+
+# Features
+
+# Modules
+
+# Tech Stack
+
+# Setup
