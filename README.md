@@ -40,5 +40,22 @@ Hourly changing data such as temperature, uv index, rain probalility, humidity a
 An intermediate page shown until a successful response is received from the weather API and AI.
 
 # Tech
+### Frontend
+1. React - v18.2.0
+1. React Select - v5.7.2
+1. Typescript - v5.0.4
+1. PostCSS - v8.4.23
+1. TailwindCSS - v3.3.1
+1. Tremor - v2.2.0
+1. Apollo Client - v3.7.12
+
+### Backend
+1. Next.js - v13.3.0
+1. StepZen
+1. GraphQL - v16.6.0
+
+### API
+1. county-state-city - v3.1.2
+1. openai - 3.2.1
 
 # Setup
