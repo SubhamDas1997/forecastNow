@@ -56,6 +56,6 @@ An intermediate page shown until a successful response is received from the weat
 
 ### API
 1. county-state-city - v3.1.2
-1. openai - 3.2.1
+1. OpenAI - 3.2.1
 
 # Setup
