@@ -17,7 +17,7 @@ A full stack weather app summarising a weather report of any city of the world:
 ### Homepage
 <img src="images/homepage.png"/>
 
-## Weather Details
+### Weather Details
 <img src="images/details-page.png"/>
 
 
