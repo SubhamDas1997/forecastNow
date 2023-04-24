@@ -68,7 +68,7 @@ An intermediate page shown until a successful response is received from the weat
 1. Clone the repo to your folder of choice
 1. Open the folder with VSCode (recommended)
 1. Open the terminal and install all dependencies using `npm install`
-1. Navigate to root left of your project and create a `.env.local` file. The file should contain the following variables -
+1. Navigate to root level of your project and create a `.env.local` file. The file should contain the following variables -
     - `APP_PORT_NO = 3000`
     - `API_URL = http://localhost:5001/api/forecast-now`
     - `OPENAI_API_KEY` which you have already noted down after creating account on OpenAPI
