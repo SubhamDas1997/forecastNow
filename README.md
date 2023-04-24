@@ -62,9 +62,19 @@ An intermediate page shown until a successful response is received from the weat
 ### Pre-requisites
 1. Download and install the latest version of [Node.js](https://nodejs.org/en/download/current) for development
 1. Create an account on [StepZen](https://stepzen.com) and install their [CLI](https://stepzen.com/docs/quick-start/install-and-setup#install-stepzen)
-1. Install the [OpenAI CLI](https://platform.openai.com/docs/api-reference) after creating an account on [OpenAI](https://openai.com/)
-1. Prepare the `.env` file with your `API_URL`, `NEXT_PUBLIC_STEPZEN_API_KEY` & `OPENAI_API_KEY` which can be found in StepZen and OpenAI accounts respectively
+1. Create an account on [OpenAI](https://openai.com/) and create your personal [API Key](https://platform.openai.com/account/api-keys). Keep it noted for reference
 
 ### Steps
-1. Open the project with VSCode (recommended)
-1. Open terminal and change directory to `stepzen`
+1. Clone the repo to your folder of choice
+1. Open the folder with VSCode (recommended)
+1. Open the terminal and install all dependencies using `npm install`
+1. Navigate to root left of your project and create a `.env.local` file. The file should contain the following variables -
+    - `APP_PORT_NO = 3000`
+    - `API_URL = http://localhost:5001/api/forecast-now`
+    - `OPENAI_API_KEY` which you have already noted down after creating account on OpenAPI
+    - `NEXT_PUBLIC_STEPZEN_API_KEY` which can found in your stepzen [dashboard](https://dashboard.stepzen.com/account)
+1. Inside terminal, change directory to 'stepzen' using `cd stepzen`
+1. Login to your stepzen account using `stepzen login`. Fill all the details asked using values found in your [account settings](https://dashboard.stepzen.com/account)
+1. Start the stepzen backend using `stepzen start --dashboard=local --port=5001`
+1. Open another instance of the terminal and run `npm run dev`. Make sure you are on your root level
+1. Application will be accessible on `http://localhost:3000`
