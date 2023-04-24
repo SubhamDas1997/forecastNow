@@ -20,6 +20,24 @@ A full stack weather app summarising a weather report of any city of the world:
 ### Weather Details
 <img src="images/details-page.png"/>
 
+### Loading
+<img src="images/loading.png"/>
+
+## Components
+### City Picker
+<img src="images/city-picker.png"/>
+
+### Information Panel
+<img src="images/info-panel.png"/>
+
+### Callout Card
+<img src="images/callout-card.png"/>
+
+### Stat Card
+<img src="images/stat-card.png"/>
+
+### Area Chart
+<img src="images/area-chart.png"/>
 
 # Modules
 1. Homepage
