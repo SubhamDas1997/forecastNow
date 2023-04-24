@@ -76,5 +76,5 @@ An intermediate page shown until a successful response is received from the weat
 1. Inside terminal, change directory to 'stepzen' using `cd stepzen`
 1. Login to your stepzen account using `stepzen login`. Fill all the details asked using values found in your [account settings](https://dashboard.stepzen.com/account)
 1. Start the stepzen backend using `stepzen start --dashboard=local --port=5001`
-1. Open another instance of the terminal and run `npm run dev`. Make sure you are on your root level
+1. Open another instance of the terminal and run `npm run dev`. Make sure you are at the root level
 1. Application will be accessible on `http://localhost:3000`
