@@ -61,7 +61,7 @@ An intermediate page shown until a successful response is received from the weat
 # Setup
 ### Pre-requisites
 1. Download and install the latest version of [Node.js](https://nodejs.org/en/download/current) for development
-1. Create an account on [StepZen](https://stepzen.com) and install teh [CLI](https://stepzen.com/docs/quick-start/install-and-setup#install-stepzen)
+1. Create an account on [StepZen](https://stepzen.com) and install their [CLI](https://stepzen.com/docs/quick-start/install-and-setup#install-stepzen)
 1. Install the [OpenAI CLI](https://platform.openai.com/docs/api-reference) after creating an account on [OpenAI](https://openai.com/)
 1. Prepare the `.env` file with your `API_URL`, `NEXT_PUBLIC_STEPZEN_API_KEY` & `OPENAI_API_KEY` which can be found in StepZen and OpenAI accounts respectively
 
