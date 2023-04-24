@@ -1,9 +1,7 @@
-'use client'
-
 import CitySelector from "@/components/CitySelector";
 import { Card, Divider, Subtitle, Text } from "@tremor/react";
 
-export default function Home() {
+const Home = () => {
   return (
     <main className="flex flex-col justify-center items-center min-h-screen bg-gradient-to-br from-[#2EB62C] to-[#B3D475] p-10">
       <Card className="max-w-3xl">
@@ -27,3 +25,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home
