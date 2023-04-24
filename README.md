@@ -13,9 +13,12 @@ A full stack weather app summarising a weather report of any city of the world:
   - Generate concise summary with suggestions about tackling the weather conditions using GPT-3.5-turbo taking in all the weather data from the API response
 
 # Screenshots
-## Pages:
+## Pages
 ### Homepage
 <img src="images/homepage.png"/>
+
+## Weather Details
+<img src="images/details-page.png"/>
 
 
 # Modules
