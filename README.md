@@ -3,7 +3,7 @@
 ### 🌐 [Site](https://forecast-now-silk.vercel.app)
 
 # Features
-A full stack weather app summarising a weather report of any city of the world:
+A full stack weather app to generate a concise weather report of any city of the world:
   - Using 'country-state-city' library, select any city of the world to check weather for
   
   - Fetch current weather conditions of any city which includes current temperature, cloud cover, sunrise and sunset times and so on with the help of 'Open-Meteo' free weather API
