@@ -10,6 +10,7 @@ import HumidityChart from '@/components/HumidityChart'
 import getBasePath from '@/lib/getBasePath'
 import cleanData from '@/lib/cleanData'
 import WindGustsChart from '@/components/WindGustsChart'
+import windDirNumToDirection from '@/lib/windDirNumToDirection'
 
 export const revalidate = 300;
 
@@ -47,6 +48,9 @@ async function weatherReport({ params: {city, lat, long }}: props) {
 
   const GPTData = await res.json();
   const { content } = GPTData;
+
+  const windDirNum: string = response.current_weather.winddirection.toFixed(1);
+  const direction: any = windDirNumToDirection[Math.round((parseInt(windDirNum) % 360) / 22.5) + 1].label;
 
   return (
     <div className='flex flex-col min-h-screen lg:flex-row'>
@@ -93,7 +97,7 @@ async function weatherReport({ params: {city, lat, long }}: props) {
 
               <StatCard 
                 title='Wind Direction'
-                metric={`${response.current_weather.winddirection.toFixed(1)}°`}
+                metric={`${windDirNum}° ${direction}`}
                 color='blue'
               />
             </div>
