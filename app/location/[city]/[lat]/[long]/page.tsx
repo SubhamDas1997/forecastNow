@@ -49,8 +49,8 @@ async function weatherReport({ params: {city, lat, long }}: props) {
   const GPTData = await res.json();
   const { content } = GPTData;
 
-  const windDirNum: string = response.current_weather.winddirection.toFixed(1);
-  const direction: any = windDirNumToDirection[Math.round((parseInt(windDirNum) % 360) / 22.5) + 1].label;
+  const windDirNumber: string = response.current_weather.winddirection.toFixed(1);
+  const direction: any = windDirNumToDirection[Math.round((parseInt(windDirNumber) % 360) / 22.5) + 1].label;
 
   return (
     <div className='flex flex-col min-h-screen lg:flex-row'>
@@ -97,7 +97,7 @@ async function weatherReport({ params: {city, lat, long }}: props) {
 
               <StatCard 
                 title='Wind Direction'
-                metric={`${windDirNum}° ${direction}`}
+                metric={`${windDirNumber}° ${direction}`}
                 color='blue'
               />
             </div>
