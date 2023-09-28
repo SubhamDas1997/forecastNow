@@ -36,18 +36,20 @@ async function weatherReport({ params: {city, lat, long }}: props) {
   });
 
   const response: Root = data.myQuery;
-  const dataToGPT = cleanData(response, city);
+  // const dataToGPT = cleanData(response, city);
 
-  const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
-    method: 'POST',
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({weatherData: dataToGPT})
-  })
+  // const res = await fetch(`${getBasePath()}/api/getWeatherSummary`, {
+  //   method: 'POST',
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: JSON.stringify({weatherData: dataToGPT})
+  // })
 
-  const GPTData = await res.json();
-  const { content } = GPTData;
+  // const GPTData = await res.json();
+  // const { content } = GPTData;
+
+  const content = "Feature unavailable due to new restrictions on GPT3.5 turbo";
 
   const windDirNumber: string = response.current_weather.winddirection.toFixed(1);
   const direction: any = windDirNumToDirection[Math.round((parseInt(windDirNumber) % 360) / 22.5) + 1].label;
